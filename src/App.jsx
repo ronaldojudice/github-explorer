@@ -1,4 +1,5 @@
-export function App()
-{
-  return <h1>PAUL AARON SCHOLESy</h1>
+export function App(){
+  //throw new Error('Eita Porra, deu merda.');
+ 
+  return(<h1>xanaranarow</h1>)
 }
