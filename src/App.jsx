@@ -1,5 +1,7 @@
-export function App(){
-  //throw new Error('Eita Porra, deu merda.');
+import './styles/global.scss';
+import RepositoryList from './components/RepositoryList.jsx';
+
+export default function App(){
  
-  return(<h1>xanaranarow</h1>)
+  return <RepositoryList/>
 }
