@@ -4,17 +4,14 @@ import { useState,useEffect } from 'react';
 
 //https://api.github.com/users/ronaldojudice/repos
 
-const repository = {
-  name: 'Unform',
-  description:'This is a way to easy programming',
-  link: 'https://g1.com.br/tvriosul'
-}
 
 export function RepositoryList(){
   const [repositories, setRepositories] = useState([]);
 
  useEffect(()=>{
-  fetch('https://api.github.com/users/ronaldojudice/repos').then()
+  fetch('https://api.github.com/users/ronaldojudice/repos')
+  .then(response=> response.json())
+  .then(data => setRepositories(data))
  },[]);
  
   //
@@ -24,10 +21,13 @@ export function RepositoryList(){
     <section className="repository-list">
     <h1>list of repositories</h1>    
     <ul>
-      <RepositoryItem repository={repository}/>
-      <RepositoryItem repository={repository}/>
-      <RepositoryItem repository={repository}/>
-      <RepositoryItem repository={repository}/>
+      {
+        repositories.map(repository=>{
+          return  <RepositoryItem key={repository.name} repository={repository}/> 
+          
+
+        })}
+          
     </ul>
     
     
